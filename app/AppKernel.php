@@ -33,7 +33,8 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-
+            new Luisa\FrontendBundle\FrontendBundle(),
+            new Luisa\BackendBundle\BackendBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
