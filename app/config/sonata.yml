@@ -1,0 +1,147 @@
+# FOS User w/ Sonata
+fos_user:
+    db_driver:      orm
+    firewall_name:  admin
+    user_class:     Application\Sonata\UserBundle\Entity\User
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+    service:
+        user_manager: sonata.user.orm.user_manager
+
+sonata_user:
+    impersonating:
+        route:                sonata_admin_dashboard
+
+# Misc
+doctrine:
+    dbal:
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+sonata_admin:
+    title:      luisa
+    title_logo: /bundles/sonataadmin/logo_title.png
+    templates:
+        layout:  SonataAdminBundle::layout.html.twig
+        list:    SonataAdminBundle:CRUD:list.html.twig
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+sonata_core: ~
+# Media
+sonata_media:
+    default_context: default
+    db_driver: doctrine_orm
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                - sonata.media.provider.image
+            formats:
+                standard:   { width: 600 , quality: 80}
+        uploads:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+            formats:
+                lightbox:   { width: 1200 , quality: 100}
+                thumbnail:  { width: 140, height: 140, quality: 90 }
+        file:
+            download:
+                strategy: sonata.media.security.public_strategy
+            providers:
+                - sonata.media.provider.file
+            formats:
+                player:  { width: 640 , quality: 480}
+
+
+
+    cdn:
+        server:
+            path: /uploads/media
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     false
+    # use THUMBNAIL_OUTBOUND for generation (see http://imagine.readthedocs.org/en/v0.2-0/image.html )
+    resizer:
+        simple:
+            mode: outbound
+
+    providers:
+        file:
+            allowed_extensions: ['pdf', 'txt', 'rtf','doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml', 'mp3']
+            allowed_mime_types: ['application/pdf', 'application/x-pdf', 'application/rtf', 'text/html', 'text/rtf', 'text/plain','application/excel', 'application/msword', 'application/vnd.ms-excel', 'application/vnd.ms-powerpoint','application/vnd.ms-powerpoint', 'application/vnd.oasis.opendocument.text', 'application/vnd.oasis.opendocument.graphics', 'application/vnd.oasis.opendocument.presentation', 'application/vnd.oasis.opendocument.spreadsheet', 'application/vnd.oasis.opendocument.chart', 'application/vnd.oasis.opendocument.formula', 'application/vnd.oasis.opendocument.database', 'application/vnd.oasis.opendocument.image','text/comma-separated-values','text/xml', 'application/xml','application/zip', 'audio/mpeg3', 'audio/mpeg']
+sonata_formatter:
+    formatters:
+        markdown:
+            service: sonata.formatter.text.markdown
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig #keep this commented unless you are using media bundle.
+
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        twig:
+            service: sonata.formatter.text.twigengine
+            extensions: [] # Twig formatter cannot have extensions
+sonata_seo:
+    encoding:         UTF-8
+    page:
+        title:            A wonderful world agency
+        default:          sonata.seo.page.default
+        metas:
+            name:
+                keywords:             foo bar
+                description:          The description
+                robots:               index, follow
+
+            property:
+                # Facebook application settings
+                #'fb:app_id':          XXXXXX
+                #'fb:admins':          admin1, admin2
+
+                # Open Graph information
+                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:site_name':       Sonata Project Sandbox
+                'og:description':     A demo of the some rich bundles for your Symfony2 projects
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+                #'X-Ua-Compatible':      IE=EmulateIE7
+
+            charset:
+                UTF-8:    ''
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"

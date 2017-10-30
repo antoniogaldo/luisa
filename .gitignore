@@ -1,0 +1,46 @@
+/app/config/parameters.yml
+/build/
+/phpunit.xml
+/app/cache/*
+/app/logs/*
+/app/logs/dev.log
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
+/vendor/
+
+
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+build/*
+bin/*
+*/logs/*
+*/cache/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+
+# Composer
+composer.phar
+
+# Linux tmp
+*~
+
+# OSX & DreamWeaver
+.DS_Store
+_notes/
