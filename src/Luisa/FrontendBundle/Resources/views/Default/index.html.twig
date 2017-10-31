@@ -1,1 +1,37 @@
-Hello World!
+{% extends "::base.html.twig" %}
+{% block body %}
+<div class="row">
+  <div class="col-sm-4">
+    <ul class="scroller">
+    {% for f in foto %}
+      <li class="hovereffect">
+        <img class="img-responsive" src="{% path f.image, 'reference' %}" alt="">
+        <div class="overlay">
+          <h2></h2>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-sm-8">
+    <h1>Luisa galdo</h1>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="{{ asset('public/js/jquery.simplyscroll.js') }}"></script>
+<script type="text/javascript">
+$(".scroller .simply-scroll-list").css({"height":"auto"});
+        (function($) {
+         $(function() {
+          $(".scroller").simplyScroll({
+            customClass: 'vert',
+            orientation: 'vertical',
+           speed:1,
+           pauseOnHover:false,
+           direction:'backwards',
+           customClass:'vert'});
+      });
+     })(jQuery);
+ </script>
+{% endblock %}

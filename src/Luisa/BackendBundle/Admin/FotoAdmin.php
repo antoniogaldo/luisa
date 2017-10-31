@@ -25,6 +25,7 @@ class FotoAdmin extends Admin
   {
       $listMapper
           ->addIdentifier('name', null, array('label' => 'Nome'))
+          ->add('image', null, array('label' => 'Immagine'))
           ;
   }
 
