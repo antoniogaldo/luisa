@@ -27,6 +27,8 @@ h6 {
   font-size: 30px;
 }
 h1{
+  text-align: center;
+  padding-top: 50px;
   font-size: 36px;
   color:black;
 }
@@ -87,4 +89,8 @@ ul{
     width: 100%;
     padding-bottom: 10px;
     height: auto;
+}
+@media (min-width: 768px){
+.col-sm-8 {
+    width: 65.666667%;
 }

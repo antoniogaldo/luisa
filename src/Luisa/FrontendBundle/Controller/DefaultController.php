@@ -24,8 +24,10 @@ class DefaultController extends Controller
       {
         $em = $this->getDoctrine()->getManager();
         $foto = $em->getRepository('BackendBundle:Foto')->findAll();
+        $video = $em->getRepository('BackendBundle:Video')->findAll();
         return $this->render('FrontendBundle:Default:index.html.twig',array(
-          'foto' => $foto
+          'foto' => $foto,
+          'video'=> $video
         ));
 
       }

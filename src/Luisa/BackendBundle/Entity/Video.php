@@ -35,9 +35,9 @@ class Video
 
   /**
    * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
-   * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="SET NULL")
+   * @ORM\JoinColumn(name="video_id", referencedColumnName="id", onDelete="SET NULL")
    */
-  private $image;
+  private $video;
 
 
   /**
@@ -129,27 +129,32 @@ class Video
         return $this->rotta;
     }
 
+
     /**
-     * Set image
+     * Set video
      *
-     * @param \Application\Sonata\MediaBundle\Entity\Media $image
+     * @param \Application\Sonata\MediaBundle\Entity\Media $video
      *
      * @return Video
      */
-    public function setImage(\Application\Sonata\MediaBundle\Entity\Media $image = null)
+    public function setVideo(\Application\Sonata\MediaBundle\Entity\Media $video = null)
     {
-        $this->image = $image;
+        $this->video = $video;
 
         return $this;
     }
 
     /**
-     * Get image
+     * Get video
      *
      * @return \Application\Sonata\MediaBundle\Entity\Media
      */
-    public function getImage()
+    public function getVideo()
     {
-        return $this->image;
+        return $this->video;
+    }
+    public function __toString()
+    {
+        return ($this->name) ? $this->name : 'Nuovo Video';
     }
 }
