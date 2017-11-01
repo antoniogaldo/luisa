@@ -45,6 +45,18 @@ class DefaultController extends Controller
       }
 
       /**
+      * @Route("/video", name="video")
+      */
+      public function VideoAction()
+      {
+        $em = $this->getDoctrine()->getManager();
+        $video = $em->getRepository('BackendBundle:Video')->findAll();
+        return $this->render('FrontendBundle:Default:video.html.twig',array(
+          'video' => $video,
+        ));
+      }
+
+      /**
       * @Route("/fotocategoria/foto/{id}", name="foto")
       */
       public function FotoAction($id)

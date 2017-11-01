@@ -15,10 +15,18 @@ services:
             - ~
             - Luisa\BackendBundle\Entity\VideoHome
             - 'SonataAdminBundle:CRUD'
+    luisa.admin.video:
+        class: Luisa\BackendBundle\Admin\VideoAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Video, label: "Video",icon: "<i class=\"fa fa-video-camera\"></i>"  }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\Video
+            - 'SonataAdminBundle:CRUD'
     luisa.admin.fotocategoria:
         class: Luisa\BackendBundle\Admin\FotoCategoriaAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Categoria",icon: "<i class=\"fa fa-folder\"></i>" }
+            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Categoria",icon: "<i class=\"fa fa-camera-retro\"></i>" }
         arguments:
             - ~
             - Luisa\BackendBundle\Entity\FotoCategoria
@@ -26,8 +34,16 @@ services:
     luisa.admin.foto:
         class: Luisa\BackendBundle\Admin\FotoAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Foto",icon: "<i class=\"fa fa-folder\"></i>" }
+            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Foto",icon: "<i class=\"fa fa-camera-retro\"></i>" }
         arguments:
             - ~
             - Luisa\BackendBundle\Entity\Foto
+            - 'SonataAdminBundle:CRUD'
+    luisa.admin.image:
+        class: Luisa\BackendBundle\Admin\ImageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Image, label: "Image",icon: "<i class=\"fa fa-picture-o\"></i>"  }
+        arguments:
+            - ~
+            -  Application\Sonata\MediaBundle\Entity\Media
             - 'SonataAdminBundle:CRUD'
