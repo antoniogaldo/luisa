@@ -5,12 +5,12 @@ namespace Luisa\BackendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Video
+ * VideoHome
  *
- * @ORM\Table(name="video__internal")
- * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\VideoInternalRepository")
+ * @ORM\Table(name="home__videohome")
+ * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\VideoHomeRepository")
  */
-class VideoInternal
+class VideoHome
 {
   /**
    * @var integer
@@ -35,9 +35,9 @@ class VideoInternal
 
   /**
    * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
-   * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="SET NULL")
+   * @ORM\JoinColumn(name="video_id", referencedColumnName="id", onDelete="SET NULL")
    */
-  private $image;
+  private $video;
 
 
   /**
@@ -62,7 +62,7 @@ class VideoInternal
      *
      * @param string $name
      *
-     * @return VideoInternal
+     * @return Video
      */
     public function setName($name)
     {
@@ -86,7 +86,7 @@ class VideoInternal
      *
      * @param boolean $active
      *
-     * @return VideoInternal
+     * @return Video
      */
     public function setActive($active)
     {
@@ -110,7 +110,7 @@ class VideoInternal
      *
      * @param string $rotta
      *
-     * @return VideoInternal
+     * @return Video
      */
     public function setRotta($rotta)
     {
@@ -129,27 +129,32 @@ class VideoInternal
         return $this->rotta;
     }
 
+
     /**
-     * Set image
+     * Set video
      *
-     * @param \Application\Sonata\MediaBundle\Entity\Media $image
+     * @param \Application\Sonata\MediaBundle\Entity\Media $video
      *
-     * @return VideoInternal
+     * @return Video
      */
-    public function setImage(\Application\Sonata\MediaBundle\Entity\Media $image = null)
+    public function setVideo(\Application\Sonata\MediaBundle\Entity\Media $video = null)
     {
-        $this->image = $image;
+        $this->video = $video;
 
         return $this;
     }
 
     /**
-     * Get image
+     * Get video
      *
      * @return \Application\Sonata\MediaBundle\Entity\Media
      */
-    public function getImage()
+    public function getVideo()
     {
-        return $this->image;
+        return $this->video;
+    }
+    public function __toString()
+    {
+        return ($this->name) ? $this->name : 'Nuovo Video';
     }
 }

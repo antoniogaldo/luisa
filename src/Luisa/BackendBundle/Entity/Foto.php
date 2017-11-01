@@ -7,45 +7,42 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Foto
  *
- * @ORM\Table(name="foto")
- * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\FotoRepository")
+ * @ORM\Table(name="foto__foto")
+ * @ORM\Entity()
  */
 class Foto
 {
-  /**
-   * @var integer
-   *
-   * @ORM\Column(name="id", type="integer")
-   * @ORM\Id
-   * @ORM\GeneratedValue(strategy="AUTO")
-   */
-  private $id;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
-  /**
-  * @ORM\Column(type="string", length=255)
-  */
-  private $name;
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $name;
 
-  /**
-   * @var boolean
-   *
-   * @ORM\Column(name="active", type="boolean")
-   */
-  private $active;
+    /**
+    * @ORM\ManyToOne(targetEntity="FotoCategoria", inversedBy="foto")
+    * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id", onDelete="SET NULL")
+    */
+    private $categoria;
 
-  /**
-   * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
-   * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="SET NULL")
-   */
-  private $image;
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $image;
 
-
-  /**
-   * @var string
-   *
-   * @ORM\Column(name="rotta", type="string", nullable=true)
-   */
-  private $rotta;
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery")
+     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+     private $gallery;
 
     /**
      * Get id
@@ -56,6 +53,7 @@ class Foto
     {
         return $this->id;
     }
+
 
     /**
      * Set name
@@ -82,51 +80,27 @@ class Foto
     }
 
     /**
-     * Set active
+     * Set categoria
      *
-     * @param boolean $active
+     * @param \Luisa\BackendBundle\Entity\FotoCategoria $categoria
      *
      * @return Foto
      */
-    public function setActive($active)
+    public function setCategoria(\Luisa\BackendBundle\Entity\FotoCategoria $categoria = null)
     {
-        $this->active = $active;
+        $this->categoria = $categoria;
 
         return $this;
     }
 
     /**
-     * Get active
+     * Get categoria
      *
-     * @return boolean
+     * @return \Luisa\BackendBundle\Entity\FotoCategoria
      */
-    public function getActive()
+    public function getCategoria()
     {
-        return $this->active;
-    }
-
-    /**
-     * Set rotta
-     *
-     * @param string $rotta
-     *
-     * @return Foto
-     */
-    public function setRotta($rotta)
-    {
-        $this->rotta = $rotta;
-
-        return $this;
-    }
-
-    /**
-     * Get rotta
-     *
-     * @return string
-     */
-    public function getRotta()
-    {
-        return $this->rotta;
+        return $this->categoria;
     }
 
     /**
@@ -151,5 +125,29 @@ class Foto
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set gallery
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Gallery $gallery
+     *
+     * @return Foto
+     */
+    public function setGallery(\Application\Sonata\MediaBundle\Entity\Gallery $gallery = null)
+    {
+        $this->gallery = $gallery;
+
+        return $this;
+    }
+
+    /**
+     * Get gallery
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Gallery
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
     }
 }

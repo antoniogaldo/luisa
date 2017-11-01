@@ -1,33 +1,33 @@
 services:
+    luisa.admin.fotohome:
+        class: Luisa\BackendBundle\Admin\FotoHomeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Home, label: "Foto",icon: "<i class=\"fa fa-picture-o\"></i>"  }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\FotoHome
+            - 'SonataAdminBundle:CRUD'
+    luisa.admin.videohome:
+        class: Luisa\BackendBundle\Admin\VideoHomeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Home, label: "Video",icon: "<i class=\"fa fa-video-camera\"></i>"  }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\VideoHome
+            - 'SonataAdminBundle:CRUD'
+    luisa.admin.fotocategoria:
+        class: Luisa\BackendBundle\Admin\FotoCategoriaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Categoria",icon: "<i class=\"fa fa-folder\"></i>" }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\FotoCategoria
+            - 'SonataAdminBundle:CRUD'
     luisa.admin.foto:
         class: Luisa\BackendBundle\Admin\FotoAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Foto",icon: "<i class=\"fa fa-picture-o\"></i>"  }
+            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Foto",icon: "<i class=\"fa fa-folder\"></i>" }
         arguments:
             - ~
             - Luisa\BackendBundle\Entity\Foto
-            - 'SonataAdminBundle:CRUD'
-    luisa.admin.fotointernal:
-        class: Luisa\BackendBundle\Admin\FotoInternalAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: Foto, label: "Foto interne",icon: "<i class=\"fa fa-picture-o\"></i>>"  }
-        arguments:
-            - ~
-            - Luisa\BackendBundle\Entity\FotoInternal
-            - 'SonataAdminBundle:CRUD'
-    luisa.admin.video:
-        class: Luisa\BackendBundle\Admin\VideoAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: Video, label: "Video",icon: "<i class=\"fa fa-video-camera\"></i>"  }
-        arguments:
-            - ~
-            - Luisa\BackendBundle\Entity\Video
-            - 'SonataAdminBundle:CRUD'
-    luisa.admin.videointernal:
-        class: Luisa\BackendBundle\Admin\VideoInternalAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: Video, label: "Video interne",icon: "<i class=\"fa fa-video-camera\"></i>>"  }
-        arguments:
-            - ~
-            - Luisa\BackendBundle\Entity\VideoInternal
             - 'SonataAdminBundle:CRUD'

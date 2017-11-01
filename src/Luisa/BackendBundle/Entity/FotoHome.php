@@ -5,12 +5,12 @@ namespace Luisa\BackendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Foto
+ * FotoHome
  *
- * @ORM\Table(name="foto__internal")
- * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\FotoInternalRepository")
+ * @ORM\Table(name="home__fotohome")
+ * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\FotoHomeRepository")
  */
-class FotoInternal
+class FotoHome
 {
   /**
    * @var integer
