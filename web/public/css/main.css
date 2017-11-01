@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
 /*************************
 *******Typography******
 **************************/
-
 body {
+  font-family: 'WindsorLight';
   background: #fff;
-  font-family: 'Raleway', sans-serif;
   color:#4e4e4e;
   line-height: 22px;
   overflow: hidden;
@@ -19,16 +17,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  font-family: 'Raleway', sans-serif;
+    font-family: 'WindsorLight';
   color:#4e4e4e;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
 }
 .name_item{
   font-size: 30px;
 }
 h1{
   text-align: center;
-  padding-top: 50px;
+  padding-top: 20px;
   font-size: 36px;
   color:black;
 }
@@ -93,4 +92,17 @@ ul{
 @media (min-width: 768px){
 .col-sm-8 {
     width: 65.666667%;
+}
+.navbar-default {
+    background-color: white; 
+    border-color: white;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    border-color: white;
 }

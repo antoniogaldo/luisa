@@ -8,13 +8,18 @@
   {% block title %}
   Sito Luisa Galdo
 {% endblock %}</title>
+<style>
+@font-face {
+    font-family: 'WindsorLight';
+    src: url({{asset('public/font/WindsorLight.ttf')}});
+}
+</style>
 {% block stylesheets %}
 <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('public/css/font-awesome.css') }}" rel="stylesheet">
 <link href="{{ asset('public/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href="{{ asset('public/css/jquery.simplyscroll.css') }}" rel="stylesheet">
 <link href="{{ asset('public/css/main.css') }}" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 {% endblock %}
 {% block body %}
 {% endblock %}

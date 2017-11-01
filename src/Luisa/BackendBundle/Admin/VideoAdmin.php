@@ -11,6 +11,7 @@ use Symfony\Component\Form\Form;
 
 class VideoAdmin extends Admin
 {
+  
   protected function configureFormFields(FormMapper $formMapper) {
       $formMapper
         ->add('name', null, array('required' => true, 'label' => 'Nome','help' => 'Titolo viaggio'))
