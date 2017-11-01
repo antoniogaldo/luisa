@@ -14,7 +14,7 @@
     </ul>
   </div>
   <div class="col-sm-8">
-    <a href="{{ path('home')}}"><h1>LUISA GALDO</h1></a>
+    <h1><a href="{{ path('home')}}">LUISA GALDO</a></h1>
     {% for v in video %}
       <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ v.video.providerReference }}?autoplay=1&loop=1&mute=0&autopause=0&background=1" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     {% endfor %}

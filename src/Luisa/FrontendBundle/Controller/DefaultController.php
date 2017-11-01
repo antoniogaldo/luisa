@@ -42,17 +42,17 @@ class DefaultController extends Controller
         return $this->render('FrontendBundle:Default:fotocategoria.html.twig',array(
           'fotocategoria' => $fotocategoria,
         ));
+      }
 
       /**
-      * @Route("/fotocategoria/foto/{id}", name="foto-categoria")
+      * @Route("/fotocategoria/foto/{id}", name="foto")
       */
-      public function FotoCategoriaAction($id)
+      public function FotoAction($id)
       {
         $em = $this->getDoctrine()->getManager();
         $foto = $em->getRepository('BackendBundle:Foto')->find($id);
         return $this->render('FrontendBundle:Default:foto.html.twig',array(
           'foto' => $foto,
         ));
-
       }
 }
