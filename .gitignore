@@ -15,9 +15,6 @@
 /var/sessions/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
-/bin/*
-!bin/console
-!bin/symfony_requirements
 /app/bootstrap.php.cache
 /var/bootstrap.php.cache
 /vendor/
