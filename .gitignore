@@ -25,7 +25,6 @@ app/bootstrap*
 # Symfony directories
 vendor/*
 build/*
-bin/*
 */logs/*
 */cache/*
 !app/cache/.gitkeep
