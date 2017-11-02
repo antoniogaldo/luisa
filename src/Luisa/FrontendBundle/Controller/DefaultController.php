@@ -67,4 +67,28 @@ class DefaultController extends Controller
           'foto' => $foto,
         ));
       }
+
+      /**
+      * @Route("/personalcategoria", name="personal-categoria")
+      */
+      public function PersonalCategoriaAction()
+      {
+        $em = $this->getDoctrine()->getManager();
+        $personalcategoria = $em->getRepository('BackendBundle:PersonalCategoria')->findAll();
+        return $this->render('FrontendBundle:Default:personalcategoria.html.twig',array(
+          'personalcategoria' => $personalcategoria,
+        ));
+      }
+
+      /**
+      * @Route("/personalcategoria/foto/{id}", name="personal")
+      */
+      public function PersonalAction($id)
+      {
+        $em = $this->getDoctrine()->getManager();
+        $personal = $em->getRepository('BackendBundle:Personal')->find($id);
+        return $this->render('FrontendBundle:Default:personal.html.twig',array(
+          'personal' => $personal,
+        ));
+      }
 }

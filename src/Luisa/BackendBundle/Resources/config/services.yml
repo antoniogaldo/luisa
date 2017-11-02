@@ -39,6 +39,22 @@ services:
             - ~
             - Luisa\BackendBundle\Entity\Foto
             - 'SonataAdminBundle:CRUD'
+    luisa.admin.personalcategoria:
+        class: Luisa\BackendBundle\Admin\PersonalCategoriaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Personal, label: "Categoria",icon: "<i class=\"fa fa-camera-retro\"></i>" }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\PersonalCategoria
+            - 'SonataAdminBundle:CRUD'
+    luisa.admin.personal:
+        class: Luisa\BackendBundle\Admin\PersonalAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Personal, label: "Foto",icon: "<i class=\"fa fa-camera-retro\"></i>" }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\Personal
+            - 'SonataAdminBundle:CRUD'
     luisa.admin.image:
         class: Luisa\BackendBundle\Admin\ImageAdmin
         tags:

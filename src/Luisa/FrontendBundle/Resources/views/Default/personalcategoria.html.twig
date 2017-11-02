@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+{% include 'FrontendBundle:Include:menu.html.twig' %}
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-10">
+    <div class="col-md-4">
+    {% for p in personalcategoria %}
+    <a href="{{ path('personal', { id: p.id }) }}">
+      <img class="img-responsive" src="{% path p.image, 'reference' %}" alt="">
+    </a>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+{% endblock %}
