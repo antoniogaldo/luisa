@@ -25,8 +25,8 @@ class FotoCategoriaAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id', null)
             ->addIdentifier('name', null, array('label' => 'Nome'))
+            ->add('image', null, array('label' => 'Immagine'))
         ;
     }
 

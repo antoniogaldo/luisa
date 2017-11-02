@@ -28,6 +28,7 @@ class VideoAdmin extends Admin
   {
       $listMapper
           ->addIdentifier('name', null, array('label' => 'Nome'))
+          ->add('video', null, array('label' => 'Video'))
           ;
   }
 
