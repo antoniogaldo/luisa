@@ -3,11 +3,11 @@
 {% include 'FrontendBundle:Include:menu.html.twig' %}
 <div class="row">
   <div class="col-sm-12">
+        {% for v in video %}
     <div class="col-md-3">
-    {% for v in video %}
-      <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ v.video.providerReference }}?autoplay=1&loop=1&mute=0&autopause=0&background=1" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    {% endfor %}
+      <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ v.video.providerReference }}" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
+  {% endfor %}
   </div>
 </div>
 {% endblock %}

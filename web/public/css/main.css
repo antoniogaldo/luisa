@@ -6,7 +6,6 @@ body {
   background: #fff;
   color:#4e4e4e;
   line-height: 22px;
-  overflow: hidden;
 }
 h1,
 h2,
@@ -80,7 +79,7 @@ ul{
 }
 .vert .simply-scroll-clip {
     width: 100%;
-    height: 700px;
+    height: 1500px;
 }
 .vert .simply-scroll-list li {
     width: 100%;

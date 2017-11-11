@@ -3,13 +3,13 @@
 {% include 'FrontendBundle:Include:menu.html.twig' %}
 <div class="row">
   <div class="col-sm-12">
-    <div class="col-md-3">
-    {% for f in fotocategoria %}
-    <a href="{{ path('foto', { id: f.id }) }}">
-      <img class="img-responsive" src="{% path f.image, 'reference' %}" alt="">
-    </a>
-    {% endfor %}
-  </div>
+        {% for f in fotocategoria %}
+        <div class="col-md-3">
+          <a href="{{ path('foto', { id: f.id }) }}">
+            <img class="img-responsive" src="{% path f.image, 'reference' %}" alt="">
+          </a>
+        </div>
+      {% endfor %}
   </div>
 </div>
 {% endblock %}

@@ -23,6 +23,7 @@ sonata_admin:
     title_logo: /bundles/sonataadmin/logo_title.png
     templates:
         layout:  SonataAdminBundle::layout.html.twig
+        ajax:    SonataAdminBundle::ajax_layout.html.twig
         list:    SonataAdminBundle:CRUD:list.html.twig
 sonata_block:
     default_contexts: [cms]
@@ -52,9 +53,6 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
                 - sonata.media.provider.file
-            formats:
-                lightbox:   { width: 1200 , quality: 100}
-                thumbnail:  { width: 140, height: 140, quality: 90 }
         file:
             download:
                 strategy: sonata.media.security.public_strategy
@@ -88,7 +86,7 @@ sonata_formatter:
             extensions:
                 - sonata.formatter.twig.control_flow
                 - sonata.formatter.twig.gist
-        #        - sonata.media.formatter.twig #keep this commented unless you are using media bundle.
+                - sonata.media.formatter.twig #keep this commented unless you are using media bundle.
 
 
         text:
@@ -96,7 +94,7 @@ sonata_formatter:
             extensions:
                 - sonata.formatter.twig.control_flow
                 - sonata.formatter.twig.gist
-        #        - sonata.media.formatter.twig
+                - sonata.media.formatter.twig
 
 
         rawhtml:
@@ -104,7 +102,7 @@ sonata_formatter:
             extensions:
                 - sonata.formatter.twig.control_flow
                 - sonata.formatter.twig.gist
-        #        - sonata.media.formatter.twig
+                - sonata.media.formatter.twig
 
 
         richhtml:
@@ -112,7 +110,7 @@ sonata_formatter:
             extensions:
                 - sonata.formatter.twig.control_flow
                 - sonata.formatter.twig.gist
-        #        - sonata.media.formatter.twig
+                - sonata.media.formatter.twig
 
 
         twig:

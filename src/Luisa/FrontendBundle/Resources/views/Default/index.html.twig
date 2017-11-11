@@ -1,5 +1,10 @@
 {% extends "::base.html.twig" %}
 {% block body %}
+<style>
+body {
+  overflow: hidden;
+}
+</style>
 <div class="row">
   <div class="col-sm-4">
     <ul class="scroller">
@@ -63,7 +68,6 @@ $(".scroller .simply-scroll-list").css({"height":"auto"});
             orientation: 'vertical',
            speed:1,
            pauseOnHover:false,
-           direction:'backwards',
            customClass:'vert'});
       });
      })(jQuery);
