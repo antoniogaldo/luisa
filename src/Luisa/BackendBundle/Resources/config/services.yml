@@ -63,3 +63,11 @@ services:
             - ~
             -  Application\Sonata\MediaBundle\Entity\Media
             - 'SonataAdminBundle:CRUD'
+    luisa.admin.articoli:
+        class: Luisa\BackendBundle\Admin\ArticoliAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Articoli, label: "Articoli",icon: "<i class=\"fa fa-pencil\"></i>"  }
+        arguments:
+            - ~
+            - Luisa\BackendBundle\Entity\Articoli
+            - 'SonataAdminBundle:CRUD'

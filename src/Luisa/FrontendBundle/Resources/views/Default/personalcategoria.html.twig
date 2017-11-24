@@ -2,15 +2,25 @@
 {% block body %}
 {% include 'FrontendBundle:Include:menu.html.twig' %}
 <div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-10">
-    <div class="col-md-4">
-    {% for p in personalcategoria %}
-    <a href="{{ path('personal', { id: p.id }) }}">
-      <img class="img-responsive" src="{% path p.image, 'reference' %}" alt="">
-    </a>
-    {% endfor %}
+    <div class="col-sm-12">
+        {% for p in personalcategoria %}
+        <div class="col-md-3">
+          <a href="{{ path('personal', { id: p.id }) }}">
+            <img class="img-responsive" src="{% path p.image, 'reference' %}" alt="">
+          </a>
+        </div>
+      {% endfor %}
   </div>
   </div>
-</div>
+<script src="/public/js/jquery.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+$(window).load(function(){
+$('.col-sm-12').isotope({
+  // options
+  itemSelector: '.col-md-3',
+  layoutMode:'masonry'
+});
+});
+</script>
 {% endblock %}

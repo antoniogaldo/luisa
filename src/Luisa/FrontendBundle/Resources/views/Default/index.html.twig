@@ -1,10 +1,6 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-<style>
-body {
-  overflow: hidden;
-}
-</style>
+<link href="{{ asset('public/css/index.css') }}" rel="stylesheet">
 <div class="row">
   <div class="col-sm-4">
     <ul class="scroller">
@@ -27,6 +23,7 @@ body {
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <a class="navbar-brand" href="{{path ('home')}}"><h2 class="nome">LUISA GALDO</h2></a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
