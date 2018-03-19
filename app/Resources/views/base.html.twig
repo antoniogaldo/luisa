@@ -8,24 +8,21 @@
   {% block title %}
   Sito Luisa Galdo
 {% endblock %}</title>
-<style>
-@font-face {
-    font-family: 'WindsorLight';
-    src: url({{asset('public/font/WindsorLight.ttf')}});
-}
-</style>
 {% block stylesheets %}
 <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('public/css/font-awesome.css') }}" rel="stylesheet">
-<link href="{{ asset('public/css/font-awesome.min.css') }}" rel="stylesheet">
-<link href="{{ asset('public/css/jquery.simplyscroll.css') }}" rel="stylesheet">
-<link href="{{ asset('public/css/main.css') }}" rel="stylesheet">
+<link href="{{ asset('public/font/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+<link href="{{ asset('public/css/agency.css') }}" rel="stylesheet">
 {% endblock %}
 {% block body %}
 {% endblock %}
 {% block javascripts %}
-<script src="{{ asset('public/js/jquery.js') }}"></script>
-<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('public/js/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('public/js/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('public/js/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('public/js/agency.js') }}"></script>
 {% endblock %}
 </html>
