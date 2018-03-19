@@ -23,12 +23,7 @@ class DefaultController extends Controller
       public function indexAction()
       {
         $em = $this->getDoctrine()->getManager();
-        $foto = $em->getRepository('BackendBundle:FotoHome')->findAll();
-        $video = $em->getRepository('BackendBundle:VideoHome')->findAll();
-        return $this->render('FrontendBundle:Default:index.html.twig',array(
-          'foto' => $foto,
-          'video'=> $video
-        ));
+        return $this->render('FrontendBundle:Default:index.html.twig');
 
       }
 }

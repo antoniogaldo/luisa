@@ -8,7 +8,6 @@ php bin/console doctrine:fixtures:load --fixtures=src/Aww/BackendBundle/DataFixt
 
 php bin/console doctrine:generate:entities BackendBundle
 
-
 $media = $mediaManager->findOneBy(array('id' => $id));
 $provider = $this->get($media->getProviderName());
 $provider->removeThumbnails($media);
