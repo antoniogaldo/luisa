@@ -16,13 +16,6 @@ class FotoAdmin extends Admin
                 'class' => 'BackendBundle:FotoCategoria',
                 'label' => 'Categoria',
             ))
-            ->add('image', 'sonata_type_model_list', array('required' => false, 'label' => 'Immagine',), array(
-                'link_parameters' => [
-                    'provider'=>'sonata.media.provider.image',
-                    'context'=>'uploads'
-                ],
-                'required' => false,
-            ))
             ->add('gallery', 'sonata_type_model_list', array('required' => false, 'label' => 'Galleria',), array(
                 'link_parameters' => [
                     'provider'=>'sonata.media.provider.image',
@@ -37,7 +30,7 @@ class FotoAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name', null, array('label' => 'Nome'))
-            ->add('image', null, array('label' => 'Immagine'))
+            ->add('categoria', null, array('label' => 'Categoria'))
         ;
     }
 }

@@ -23,7 +23,12 @@ class DefaultController extends Controller
       public function indexAction()
       {
         $em = $this->getDoctrine()->getManager();
-        return $this->render('FrontendBundle:Default:index.html.twig');
+        $fotocategoria = $em->getRepository('BackendBundle:FotoCategoria')->findAll();
+        $foto = $em->getRepository('BackendBundle:Foto')->findAll();
+        return $this->render('FrontendBundle:Default:index.html.twig',array(
+          'fotocategoria'=> $fotocategoria,
+          'foto'=> $foto,
+        ));
 
       }
 }

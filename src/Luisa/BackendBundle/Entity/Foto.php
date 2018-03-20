@@ -33,12 +33,6 @@ class Foto
     private $categoria;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
-     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="SET NULL")
-     */
-    private $image;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery")
      * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id", onDelete="SET NULL")
      */
@@ -104,29 +98,6 @@ class Foto
         return $this->categoria;
     }
 
-    /**
-     * Set image
-     *
-     * @param \Application\Sonata\MediaBundle\Entity\Media $image
-     *
-     * @return Foto
-     */
-    public function setImage(\Application\Sonata\MediaBundle\Entity\Media $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \Application\Sonata\MediaBundle\Entity\Media
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
 
     /**
      * Set gallery

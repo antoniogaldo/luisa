@@ -69,12 +69,6 @@ class FotoCategoria
       return $this->id;
   }
 
-  public function __toString()
-  {
-      return ($this->name) ? $this->name : 'Nuova foto';
-  }
-
-
     /**
      * Set name
      *
@@ -204,4 +198,10 @@ class FotoCategoria
     {
         return $this->video;
     }
+    public function __toString()
+    {
+        return ($this->name) ? $this->name : 'Nuova foto';
+    }
+
+
 }
