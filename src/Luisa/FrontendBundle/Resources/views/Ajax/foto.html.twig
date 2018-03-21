@@ -1,0 +1,26 @@
+{% for f in fotocategoria %}
+<div class="col-md-4 col-sm-6 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{f.id}}">
+    <div class="portfolio-hover">
+      <div class="portfolio-hover-content">
+        <i class="fa fa-plus fa-3x"></i>
+      </div>
+    </div>
+    <img class="img-fluid" src="{% path f.image, 'reference' %}" alt="{{f.name}}">
+  </a>
+</div>
+{% endfor %}
+<script src="{{ asset('public/js/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('public/js/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('public/js/imagesloaded.pkgd.min.js') }}"></script>
+<script>
+var $grid = $('.portfolio').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    // options...
+    itemSelector: '.portfolio-item',
+    columnWidth: 10,
+    horizontalOrder: true,
+  });
+});
+</script>

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * FotoCategoria
  *
  * @ORM\Table(name="foto__fotocategoria")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\FotoCategoriaRepository")
  */
 class FotoCategoria
 {
@@ -44,11 +44,6 @@ class FotoCategoria
   */
   private $foto;
 
-  /**
-   * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
-   * @ORM\JoinColumn(name="video_id", referencedColumnName="id", onDelete="SET NULL")
-   */
-  private $video;
 
   /**
    * Constructor
@@ -175,29 +170,6 @@ class FotoCategoria
         return $this->foto;
     }
 
-    /**
-     * Set video
-     *
-     * @param \Application\Sonata\MediaBundle\Entity\Media $video
-     *
-     * @return FotoCategoria
-     */
-    public function setVideo(\Application\Sonata\MediaBundle\Entity\Media $video = null)
-    {
-        $this->video = $video;
-
-        return $this;
-    }
-
-    /**
-     * Get video
-     *
-     * @return \Application\Sonata\MediaBundle\Entity\Media
-     */
-    public function getVideo()
-    {
-        return $this->video;
-    }
     public function __toString()
     {
         return ($this->name) ? $this->name : 'Nuova foto';

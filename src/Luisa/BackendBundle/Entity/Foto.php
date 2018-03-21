@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Foto
  *
  * @ORM\Table(name="foto__foto")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="Luisa\BackendBundle\Repository\FotoRepository")
  */
 class Foto
 {

@@ -1,0 +1,55 @@
+.indexnovita{
+  display: none;
+}
+.indexnovitainternal{
+  display: none;
+}
+.totop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+.totop a {
+    display: none;
+}
+#loadMore {
+    padding: 10px 100px;
+    display: block;
+    text-align: center;
+    background-color: #4d6981;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+}
+#loadMore:hover {
+    background-color: #224b67;
+    color: white;
+}
+#loadMoreinternal {
+    text-align: center;
+    padding: 2px 27%;;
+    background-color: #4d6981;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+}
+#loadMoreinternal:hover {
+    background-color: #224b67;
+    color: white;
+}
+@media (max-width: 992px){
+.indexnovitainternal {
+    display: inline-block;
+}
+}
+@media (max-width: 1200px){
+  #loadMoreinternal {
+      padding: 2px 21%;;
+  }
+}

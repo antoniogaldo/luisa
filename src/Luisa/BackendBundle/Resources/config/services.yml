@@ -15,6 +15,22 @@ services:
             - ~
             - Luisa\BackendBundle\Entity\Foto
             - 'SonataAdminBundle:CRUD'
+    luisa.admin.video:
+            class: Luisa\BackendBundle\Admin\VideoAdmin
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: Video, label: "Video",icon: "<i class=\"fa fa-video-camera\"></i>"  }
+            arguments:
+                - ~
+                - Luisa\BackendBundle\Entity\Video
+                - 'SonataAdminBundle:CRUD'
+    luisa.admin.about:
+            class: Luisa\BackendBundle\Admin\AboutAdmin
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: About, label: "About",icon: "<i class=\"fa fa-child\"></i>"  }
+            arguments:
+                - ~
+                - Luisa\BackendBundle\Entity\About
+                - 'SonataAdminBundle:CRUD'
     luisa.admin.image:
         class: Luisa\BackendBundle\Admin\ImageAdmin
         tags:

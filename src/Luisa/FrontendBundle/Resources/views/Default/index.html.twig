@@ -16,6 +16,9 @@
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
@@ -53,6 +56,28 @@
           </div>
           {% endfor %}
         </div>
+        <div class="col-xs-12 text-center"><button type="button" class="btn btn-default upload-more">More</button></div>
+      </div>
+    </section>
+
+
+    <!-- Video Grid -->
+    <section class="bg-light" id="video">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Video</h2>
+          </div>
+        </div>
+        <div class="row">
+            {% if video %}
+                {% for v in video %}
+                <div class="col-md-3 col-sm-6 video">
+                  <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ v.video.providerReference }}" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
+                {% endfor %}
+            {% endif %}
+        </div>
       </div>
     </section>
 
@@ -62,7 +87,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">{% if about %}{% for a in about %}{{a.about}}{% endfor %}{% endif %}</h3>
           </div>
         </div>
 
@@ -168,7 +193,7 @@
 </div>
 {% endfor %}
     <!-- Modal 1 -->
-    <script src="{{ asset('public/js/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('public/js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('public/js/masonry.pkgd.min.js') }}"></script>
 <script src="{{ asset('public/js/imagesloaded.pkgd.min.js') }}"></script>
 <script>
@@ -182,4 +207,22 @@ var $grid = $('.portfolio').imagesLoaded( function() {
   });
 });
 </script>
+<script>
+        var offset = 4;
+        $(document).on('click', '.upload-more', function() {
+            $.get(
+                '{{ path('ajax_get_news') }}',
+                { offset: offset },
+                function(data, status) {
+                    if(status == 'success') {
+                        if(!data) {
+                            $('.upload-more').hide();
+                        }
+                        $('.portfolio').append(data);
+                    }
+                    offset += 4;
+                }
+            );
+        })
+    </script>
     {% endblock %}

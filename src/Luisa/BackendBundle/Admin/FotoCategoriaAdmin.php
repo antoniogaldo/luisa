@@ -19,13 +19,6 @@ class FotoCategoriaAdmin extends Admin
                 ],
                 'required' => false,
             ))
-            ->add('video', 'sonata_type_model_list', array('required' => false,'help' => 'Inserisci immagini di 730px x 320px', 'label' => 'Video',), array(
-                'link_parameters' => [
-                    'provider'=>'sonata.media.provider.vimeo',
-                    'context'=>'uploads'
-                ],
-                'required' => false,
-            ))
            ;
     }
 
@@ -34,7 +27,6 @@ class FotoCategoriaAdmin extends Admin
         $listMapper
             ->addIdentifier('name', null, array('label' => 'Nome'))
             ->add('image', null, array('label' => 'Immagine'))
-            ->add('video', null, array('label' => 'Video'))
         ;
     }
 
