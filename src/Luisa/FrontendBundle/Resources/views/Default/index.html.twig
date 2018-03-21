@@ -39,7 +39,7 @@
             <h2 class="section-heading text-uppercase">Portfolio</h2>
           </div>
         </div>
-        <div class="row">
+        <div class="row portfolio">
           {% for f in fotocategoria %}
           <div class="col-md-4 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{f.id}}">
@@ -168,4 +168,18 @@
 </div>
 {% endfor %}
     <!-- Modal 1 -->
+    <script src="{{ asset('public/js/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('public/js/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('public/js/imagesloaded.pkgd.min.js') }}"></script>
+<script>
+var $grid = $('.portfolio').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    // options...
+    itemSelector: '.portfolio-item',
+    columnWidth: 10,
+    horizontalOrder: true,
+  });
+});
+</script>
     {% endblock %}
