@@ -10,12 +10,13 @@ namespace Luisa\BackendBundle\Repository;
  */
 class FotoCategoriaRepository extends \Doctrine\ORM\EntityRepository
 {
-  public function findLatestNews($limit, $offset = null)
+  public function findLatestFoto($limit, $offset = null)
     {
         $qb = $this->createQueryBuilder('f');
 
         $qb
             ->where('f.active = 1')
+            ->orderBy('f.id', 'DESC')
         ;
 
         if($offset) {

@@ -10,4 +10,23 @@ namespace Luisa\BackendBundle\Repository;
  */
 class VideoRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findLatestVideo($limit, $offsetvideo = null)
+    {
+        $qb = $this->createQueryBuilder('v');
+
+        $qb
+            ->where('v.active = 1')
+            ->orderBy('v.id', 'DESC')
+        ;
+
+        if($offsetvideo) {
+            $qb
+                ->setFirstResult($offsetvideo)
+            ;
+        }
+
+        $qb->setMaxResults($limit);
+
+        return $qb->getQuery()->getResult();
+    }
 }
