@@ -19,8 +19,9 @@ var $grid = $('.portfolio').imagesLoaded( function() {
   $grid.masonry({
     // options...
     itemSelector: '.portfolio-item',
-    columnWidth: 10,
-    horizontalOrder: true,
+    masonry: {
+      columnWidth: 50
+    }
   });
 });
 </script>

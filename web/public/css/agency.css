@@ -50,7 +50,7 @@ section h3.section-subheading {
 
 @media (min-width: 768px) {
   section {
-    padding: 100px 0;
+    padding: 80px 0;
   }
 }
 
@@ -221,7 +221,6 @@ img::-moz-selection {
 
 #portfolio .portfolio-item {
   right: 0;
-  margin: 0 0 15px;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -293,7 +292,7 @@ img::-moz-selection {
 
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
-    margin: 0 0 30px;
+    margin: 0;
   }
 }
 
@@ -696,12 +695,33 @@ button.btn.btn-default.upload-more {
     background-color: #22252a;
     color: #fcd037;
 }
+button.btn.btn-default.upload-more1 {
+    background-color: #22252a;
+    color: #fcd037;
+}
 .col-md-3.col-sm-6 {
-    padding-bottom: 15px;
+    padding-bottom: 1%;
 }
 .carousel-indicators{
     margin-top: 10px;
 }
 .carousel-indicators li{
   background-color: #fcd037;
+}
+.form-box {
+    margin: 90px auto 0 auto;
+    width: 360px;
+}
+@media (max-width: 400px) {
+#mainNav .navbar-brand {
+    font-size: 35px;
+}
+}
+.col-md-3, .col-sm-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    max-width: 24%;
+    padding-right: 0.5%!important;
+    padding-left: 0.5%!important;
 }
