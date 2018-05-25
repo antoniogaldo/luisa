@@ -5,7 +5,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Luisa Galdo</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">LUISA GALDO</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -13,10 +13,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="#video">Video</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
@@ -34,32 +34,6 @@
         <source src="public/video/video.mp4" type="video/mp4">
       </video>
     <!-- Services -->
-    <!-- Portfolio Grid -->
-    <section class="bg-light" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Portfolio</h2>
-          </div>
-        </div>
-        <div class="row portfolio">
-          {% for f in fotocategoria %}
-          <div class="col-md-3 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{f.id}}">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="{% path f.image, 'reference' %}" alt="{{f.name}}">
-            </a>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="col-xs-12 text-center"><button type="button" class="btn btn-default upload-more">More</button></div>
-      </div>
-    </section>
-
 
     <!-- Video Grid -->
     <section class="bg-light" id="video">
@@ -79,6 +53,32 @@
             {% endif %}
         </div>
         <div class="col-xs-12 text-center"><button type="button" class="btn btn-default upload-more1">More</button></div>
+      </div>
+    </section>
+    <!-- Portfolio Grid -->
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Portfolio</h2>
+          </div>
+        </div>
+        <div class="row portfolio">
+          {% for f in fotocategoria %}
+          <div class="col-md-3 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{f.id}}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  {{f.name}}
+                  <!--<i class="fa fa-plus fa-3x"></i>-->
+                </div>
+              </div>
+              <img class="img-fluid" src="{% path f.image, 'reference' %}" alt="{{f.name}}">
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="col-xs-12 text-center"><button type="button" class="btn btn-default upload-more">More</button></div>
       </div>
     </section>
 
@@ -124,18 +124,33 @@
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
+                <a href="https://vimeo.com/user17036088">
+                  <i class="fa fa-vimeo"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.instagram.com/galdoluisa/?hl=it">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="http://www.luxflux.net">
+                  <i class="fa lux">LF</i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/luisa.galdo">
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.linkedin.com/in/luisa-galdo-7b03423/">
                   <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luisartre">
+                  <i class="fa fa-twitter"></i>
                 </a>
               </li>
             </ul>
@@ -163,24 +178,24 @@
                 <div class="modal-body">
                   {% if foto.gallery %}
                   <!-- Project Details Go Here -->
-                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <div id="carouselExampleIndicators{{foto.id}}" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       {% for f in foto.gallery.galleryHasMedias  %}
-                      <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index -1 }}" {% if loop.first %} class="active"{% endif %}></li>
+                      <li data-target="#carouselExampleIndicators{{foto.id}}" data-slide-to="{{ loop.index -1 }}" {% if loop.first %} class="active"{% endif %}></li>
                       {% endfor %}
                     </ol>
                     <div class="carousel-inner">
                       {% for f in foto.gallery.galleryHasMedias  %}
                       <div class="carousel-item {% if loop.first %}active{% endif %}" >
-                        <img class="d-block w-100" src="{% path f.media, 'reference' %}" alt="First slide">
+                        <img class="d-block width" src="{% path f.media, 'reference' %}" alt="First slide">
                       </div>
                       {% endfor %}
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators{{foto.id}}" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleIndicators{{foto.id}}" role="button" data-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a>

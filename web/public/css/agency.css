@@ -1,8 +1,6 @@
 body {
-  overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
 p {
   line-height: 1.75;
 }
@@ -12,7 +10,7 @@ a {
 }
 
 a:hover {
-  color: #fec503;
+  color: #565654;
 }
 
 .text-primary {
@@ -34,9 +32,12 @@ section {
 }
 
 section h2.section-heading {
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 30px;
+  font-size: 37px;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  font-weight: 100;
+  font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 section h3.section-subheading {
@@ -50,7 +51,7 @@ section h3.section-subheading {
 
 @media (min-width: 768px) {
   section {
-    padding: 80px 0;
+    padding: 39px 0;
   }
 }
 
@@ -113,17 +114,19 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  font-size: 45px;
-  font-weight: 700;
+  font-size: 37px;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  font-weight: 100;
   font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #fec503;
+  color: #565654;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
-  font-size: 90%;
+  font-size: 65%;
   font-weight: 400;
   padding: 0.75em 0;
   letter-spacing: 1px;
@@ -132,7 +135,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #fed136;
+  color: #565654;
 }
 
 @media (min-width: 992px) {
@@ -151,7 +154,7 @@ img::-moz-selection {
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #212529;
+    background-color: #2b3035;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -239,7 +242,7 @@ img::-moz-selection {
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background: rgba(254, 209, 54, 0.9);
+  background: rgba(78, 79, 78, 0.7);
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -252,6 +255,11 @@ img::-moz-selection {
   top: 50%;
   width: 100%;
   height: 20px;
+  font-size: 22px;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  font-weight: 100;
+  font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
   margin-top: -12px;
   text-align: center;
   color: white;
@@ -586,7 +594,7 @@ img::-moz-selection {
 }
 
 section#contact {
-  background-color: #212529;
+  background-color: #2b3035;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -683,21 +691,30 @@ ul.social-buttons li a {
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-  background-color: #fed136;
+  background-color: #4f504f;
 }
 .video{
   margin-bottom: 5%;
 }
 section#video {
-    background-color: #f2f2f3!important;
+    background-color: white!important;
+    border-bottom: 1px solid;
+}
+section#portfolio {
+    background-color: white!important;
+    border-bottom: 1px solid;
 }
 button.btn.btn-default.upload-more {
-    background-color: #22252a;
-    color: #fcd037;
+  font-size: 80%;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #4d4e4d;
 }
 button.btn.btn-default.upload-more1 {
-    background-color: #22252a;
-    color: #fcd037;
+  font-size: 80%;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #4d4e4d;
 }
 .col-md-3.col-sm-6 {
     padding-bottom: 1%;
@@ -724,4 +741,19 @@ button.btn.btn-default.upload-more1 {
     max-width: 24%;
     padding-right: 0.5%!important;
     padding-left: 0.5%!important;
+}
+@media (min-width: 1200px){
+.container {
+    max-width: 1380px;
+}
+}
+.lux{
+  letter-spacing: 1px;
+    word-spacing: 1px;
+    font-weight: 100;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.width {
+  margin: 0 auto;
+    height: 500px;
 }
