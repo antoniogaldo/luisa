@@ -46,8 +46,16 @@
         <div class="row video">
             {% if video %}
                 {% for v in video %}
-                <div class="col-md-3 col-sm-6">
-                  <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ v.video.providerReference }}" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div class="col-md-12 portfolio-item">
+                  <a class="portfolio-link" href="{{ path('video', { id: v.id }) }}">
+                    <div class="portfolio-hover">
+                      <div class="portfolio-hover-content">
+                        {{v.name}}
+                        <!--<i class="fa fa-plus fa-3x"></i>-->
+                      </div>
+                    </div>
+                    <img class="image-video" src="{% path v.image, 'reference' %}"></img>
+                  </a>
                   </div>
                 {% endfor %}
             {% endif %}
@@ -178,7 +186,7 @@
                 <div class="modal-body">
                   {% if foto.gallery %}
                   <!-- Project Details Go Here -->
-                  <div id="carouselExampleIndicators{{foto.id}}" class="carousel slide" data-ride="carousel">
+                  <div id="carouselExampleIndicators{{foto.id}}" class="carousel slide" data-ride="carousel" data-interval="false" >
                     <ol class="carousel-indicators">
                       {% for f in foto.gallery.galleryHasMedias  %}
                       <li data-target="#carouselExampleIndicators{{foto.id}}" data-slide-to="{{ loop.index -1 }}" {% if loop.first %} class="active"{% endif %}></li>
@@ -186,7 +194,7 @@
                     </ol>
                     <div class="carousel-inner">
                       {% for f in foto.gallery.galleryHasMedias  %}
-                      <div class="carousel-item {% if loop.first %}active{% endif %}" >
+                      <div class="carousel-item {% if loop.first %}active{% endif %}" data-interval="false"  >
                         <img class="d-block width" src="{% path f.media, 'reference' %}" alt="First slide">
                       </div>
                       {% endfor %}
@@ -244,7 +252,7 @@ var $grid = $('.portfolio').imagesLoaded( function() {
         })
     </script>
 <script>
-        var offsetvideo = 4;
+        var offsetvideo = 5;
         $(document).on('click', '.upload-more1', function() {
             $.get(
                 '{{ path('ajax_get_video') }}',
@@ -256,7 +264,7 @@ var $grid = $('.portfolio').imagesLoaded( function() {
                         }
                         $('.video').append(data);
                     }
-                    offsetvideo += 4;
+                    offsetvideo += 5;
                 }
             );
         })

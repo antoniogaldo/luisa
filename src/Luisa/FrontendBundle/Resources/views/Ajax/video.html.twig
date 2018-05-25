@@ -1,6 +1,15 @@
-
+{% if video %}
     {% for v in video %}
-    <div class="col-md-3 col-sm-6">
-      <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ v.video.providerReference }}" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="col-md-12 portfolio-item">
+      <a class="portfolio-link" href="{{ path('video', { id: v.id }) }}">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content">
+            {{v.name}}
+            <!--<i class="fa fa-plus fa-3x"></i>-->
+          </div>
+        </div>
+        <img class="image-video" src="{% path v.image, 'reference' %}"></img>
+      </a>
       </div>
     {% endfor %}
+{% endif %}

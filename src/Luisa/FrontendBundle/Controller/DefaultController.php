@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
       const DEFAULT_LIMIT = 8;
-      const DEFAULT_LIMITVIDEO = 4;
+      const DEFAULT_LIMITVIDEO = 5;
       /**
       * @Route("/", name="entry")
       */
@@ -34,6 +34,19 @@ class DefaultController extends Controller
           'foto'=> $foto,
           'video'=> $video,
           'about'=> $about,
+        ));
+
+      }
+
+      /**
+      * @Route("/video/{id}", name="video")
+      */
+      public function videoAction($id,Request $request)
+      {
+        $em = $this->getDoctrine()->getManager();
+        $video = $em->getRepository('BackendBundle:Video')->find($id);
+        return $this->render('FrontendBundle:Default:video.html.twig',array(
+          'video'=> $video,
         ));
 
       }

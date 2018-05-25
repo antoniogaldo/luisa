@@ -298,9 +298,90 @@ img::-moz-selection {
   z-index: 2;
 }
 
+
+#video .portfolio-item {
+  right: 0;
+}
+
+#video .portfolio-item .portfolio-link {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#video .portfolio-item .portfolio-link .portfolio-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#video .portfolio-item .portfolio-link .portfolio-hover:hover {
+  opacity: 1;
+}
+
+#video .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 20px;
+  font-size: 22px;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  font-weight: 100;
+  font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  margin-top: -12px;
+  text-align: center;
+  color: white;
+}
+
+#video .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+  margin-top: -12px;
+}
+
+#video .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#video .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+  margin: 0;
+}
+
+#video .portfolio-item .portfolio-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  background-color: #fff;
+}
+
+#video .portfolio-item .portfolio-caption h4 {
+  margin: 0;
+  text-transform: none;
+}
+
+#video .portfolio-item .portfolio-caption p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#video * {
+  z-index: 2;
+}
+
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
     margin: 0;
+  }
+  #video .portfolio-item {
+    margin: 0;
+    margin-bottom: 4px;
   }
 }
 
@@ -314,7 +395,7 @@ img::-moz-selection {
 }
 
 .portfolio-modal .modal-content {
-  padding: 100px 0;
+  padding: 30px 0;
   text-align: center;
 }
 
@@ -755,5 +836,16 @@ button.btn.btn-default.upload-more1 {
 }
 .width {
   margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+.image-video{
+  width: 100%;
+  height: auto;
+}
+iframe#vimeo_player {
     height: 500px;
+}
+section#video1 {
+    background-color: white!important;
 }

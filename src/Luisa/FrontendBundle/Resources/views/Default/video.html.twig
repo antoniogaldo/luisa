@@ -1,0 +1,67 @@
+{% extends "::base.html.twig" %}
+{% block body%}
+<body id="page-top">
+  <!-- Navigation -->
+    <!-- Video Grid -->
+    <section class="bg-light" id="video">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">{{video.name}}</h2>
+          </div>
+        </div>
+        <div class="row video">
+              {% if video.video %}
+                  <iframe id="vimeo_player" src="http://player.vimeo.com/video/{{ video.video.providerReference }}" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  {% endif %}
+                  </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright"></span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://vimeo.com/user17036088">
+                  <i class="fa fa-vimeo"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/galdoluisa/?hl=it">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="http://www.luxflux.net">
+                  <i class="fa lux">LF</i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/luisa.galdo">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/luisa-galdo-7b03423/">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luisartre">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% endblock %}

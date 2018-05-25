@@ -1,9 +1,10 @@
 {% for f in fotocategoria %}
-<div class="col-md-4 col-sm-6 portfolio-item">
+<div class="col-md-3 col-sm-6 portfolio-item">
   <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{f.id}}">
     <div class="portfolio-hover">
       <div class="portfolio-hover-content">
-        <i class="fa fa-plus fa-3x"></i>
+        {{f.name}}
+        <!--<i class="fa fa-plus fa-3x"></i>-->
       </div>
     </div>
     <img class="img-fluid" src="{% path f.image, 'reference' %}" alt="{{f.name}}">
