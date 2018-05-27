@@ -33,6 +33,7 @@ class Video
    */
   private $active;
 
+
   /**
    * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
    * @ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="SET NULL")
@@ -127,6 +128,7 @@ class Video
     {
         return $this->video;
     }
+
 
     /**
      * Set image

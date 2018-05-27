@@ -40,6 +40,13 @@ class FotoCategoria
   private $active;
 
   /**
+   * @var boolean
+   *
+   * @ORM\Column(name="vertical", type="boolean")
+   */
+  private $vertical;
+
+  /**
   * @ORM\OneToMany(targetEntity="Foto", mappedBy="categoria", cascade={"persist"})
   */
   private $foto;
@@ -110,6 +117,30 @@ class FotoCategoria
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Set vertical
+     *
+     * @param boolean $vertical
+     *
+     * @return FotoCategoria
+     */
+    public function setVertical($vertical)
+    {
+        $this->vertical = $vertical;
+
+        return $this;
+    }
+
+    /**
+     * Get vertical
+     *
+     * @return boolean
+     */
+    public function getVertical()
+    {
+        return $this->vertical;
     }
 
     /**

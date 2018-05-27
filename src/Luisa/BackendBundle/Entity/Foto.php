@@ -26,6 +26,7 @@ class Foto
     */
     private $name;
 
+
     /**
     * @ORM\ManyToOne(targetEntity="FotoCategoria", inversedBy="foto")
     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id", onDelete="SET NULL")
@@ -96,6 +97,30 @@ class Foto
     public function getCategoria()
     {
         return $this->categoria;
+    }
+
+    /**
+     * Set didascalia
+     *
+     * @param string $didascalia
+     *
+     * @return FotoCategoria
+     */
+    public function setDidascalia($didascalia)
+    {
+        $this->didascalia = $didascalia;
+
+        return $this;
+    }
+
+    /**
+     * Get didascalia
+     *
+     * @return string
+     */
+    public function getDidascalia()
+    {
+        return $this->didascalia;
     }
 
 

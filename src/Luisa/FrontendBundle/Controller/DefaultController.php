@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
-      const DEFAULT_LIMIT = 8;
+      const DEFAULT_LIMIT = 20;
       const DEFAULT_LIMITVIDEO = 5;
       /**
       * @Route("/", name="entry")

@@ -12,6 +12,7 @@ class FotoCategoriaAdmin extends Admin
         $formMapper
             ->add('name', null, array('required' => true, 'label' => 'Nome'))
             ->add('active', null, array('required' => false, 'label' => 'Attivo'))
+            ->add('vertical', 'choice', array('choices' => array(0 => 'Verticale',1 => 'Orizontale')))
             ->add('image', 'sonata_type_model_list', array('required' => false, 'label' => 'Immagine'), array(
                 'link_parameters' => [
                     'provider'=>'sonata.media.provider.image',
@@ -27,6 +28,7 @@ class FotoCategoriaAdmin extends Admin
         $listMapper
             ->addIdentifier('name', null, array('label' => 'Nome'))
             ->add('image', null, array('label' => 'Immagine'))
+            ->add('vertical','choice', array('label' => 'Proporzione','editable' => true,'choices' => array(0 => 'Verticale',1 => 'Orizontale')))
         ;
     }
 

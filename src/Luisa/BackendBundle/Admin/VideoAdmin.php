@@ -29,6 +29,7 @@ class VideoAdmin extends Admin
             ],
             'required' => false,
         ))
+        ->add('didascalia', 'sonata_simple_formatter_type', array('required' => false,'format' => 'richhtml','ckeditor_context' => 'default'))
         ;}
 
   protected function configureListFields(ListMapper $listMapper)
