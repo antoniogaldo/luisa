@@ -45,7 +45,7 @@ section h3.section-subheading {
   font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
     line-height: 1.6;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 75px;
   text-transform: none;
 }
@@ -127,7 +127,7 @@ img::-moz-selection {
 
 #mainNav .navbar-nav .nav-item .nav-link {
   font-size: 65%;
-  font-weight: 400;
+  font-weight: 300;
   padding: 0.75em 0;
   letter-spacing: 1px;
   color: white;
@@ -817,6 +817,10 @@ button.btn.btn-default.upload-more1 {
 #mainNav .navbar-brand {
     font-size: 11px;
 }
+#mainNav {
+    background-color: transparent;
+    padding: 0 9px !important;
+}
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     font-size: 20px;
     position: absolute;
@@ -903,6 +907,9 @@ section h2.section-heading {
 iframe#vimeo_player {
     height: 500px;
 }
+iframe#youtube_player {
+    height: 500px;
+}
 section#video1 {
     background-color: white!important;
 }
@@ -957,10 +964,27 @@ section#video1 {
 }
 #mainNav {
     background-color: transparent;
-    padding: 0 9px;
+        padding: 13px 9px;
 }
 #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
     background-color: #2b3035;
+}
+h3.section-subheading.text-muted {
+    font-size: 15px;
+    margin-bottom: 40px;
+    word-spacing: 1px;
+    font-weight: 100;
+        text-align: justify;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+h3.section-subheading.text-muted.contact {
+    font-size: 15px;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+    word-spacing: 1px;
+    font-weight: 300;
+    text-align: center!important;
+    font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }

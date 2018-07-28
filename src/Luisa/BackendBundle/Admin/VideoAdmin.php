@@ -18,6 +18,7 @@ class VideoAdmin extends Admin
         ->add('video', 'sonata_type_model_list', array('required' => false,'help' => 'Inserisci immagini di 730px x 320px', 'label' => 'Video',), array(
             'link_parameters' => [
                 'provider'=>'sonata.media.provider.vimeo',
+                'provider'=>'sonata.media.provider.youtube',
                 'context'=>'uploads'
             ],
             'required' => false,
