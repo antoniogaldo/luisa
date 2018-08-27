@@ -82,7 +82,7 @@ ivory_ck_editor:
         default:
             enterMode: 1 # Enter Mode = <p>
             allowedContent: true  # don't mess around with classes etc
-            toolbar: [["Format","Bold","Italic","Underline","-","NumberedList","BulletedList","-","Link","Unlink","-","Undo","Redo","-","Cut","Copy","PasteText"], ["Image","Source","Maximize","Table",'Styles']]
+            toolbar: [["Format","Bold","Italic","Underline","-","NumberedList","BulletedList","-","Link","Unlink","-","Undo","Redo","-","Cut","Copy","PasteText"], [ "TextColor", "BGColor" ], ["Image","Source","Maximize","Table",'Styles']]
 knp_snappy:
     pdf:
         enabled:    true

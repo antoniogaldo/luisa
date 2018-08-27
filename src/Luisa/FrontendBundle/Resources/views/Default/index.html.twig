@@ -7,7 +7,7 @@
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">LUISA GALDO</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          
+
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -71,7 +71,7 @@
             <h2 class="section-heading text-uppercase">Portfolio</h2>
           </div>
         </div>
-        <div class="row portfolio">
+        <div class="col-lg-12 row portfolio">
           {% for f in fotocategoria %}
           <div class="col-md-3 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{f.id}}">
@@ -195,7 +195,7 @@
                     <div class="carousel-inner">
                       {% for f in foto.gallery.galleryHasMedias  %}
                       <div class="carousel-item {% if loop.first %}active{% endif %}" data-interval="false"  >
-                        <img class="d-block width" src="{% path f.media, 'reference' %}" alt="First slide">
+                        <img class="d-block w-100" src="{% path f.media, 'reference' %}" alt="First slide">
                       </div>
                       {% endfor %}
                     </div>

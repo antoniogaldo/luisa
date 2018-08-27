@@ -375,7 +375,34 @@ img::-moz-selection {
 #video * {
   z-index: 2;
 }
-
+.col-md-3, .col-sm-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    max-width: 24%;
+    padding-right: 0.5%!important;
+    padding-left: 0.5%!important;
+}
+@media (max-width: 767px) {
+  .col-md-3, .col-sm-6{
+      max-width: 40%;
+  }
+}
+@media (max-width: 500px) {
+  .col-md-3, .col-sm-6{
+      max-width: 45%;
+  }
+  .col-lg-12.row.portfolio{
+    margin: 0;
+    margin-bottom: 5%;
+  }
+  section h2.section-heading{
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
     margin: 0;
@@ -876,14 +903,6 @@ section h2.section-heading {
     font-size: 24px;
 }
 }
-.col-md-3, .col-sm-6{
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    max-width: 24%;
-    padding-right: 0.5%!important;
-    padding-left: 0.5%!important;
-}
 @media (min-width: 1200px){
 .container {
     max-width: 1380px;
@@ -975,7 +994,7 @@ h3.section-subheading.text-muted {
     font-size: 15px;
     margin-bottom: 40px;
     word-spacing: 1px;
-    font-weight: 100;
+    font-weight: 300;
         text-align: justify;
     font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
@@ -987,4 +1006,8 @@ h3.section-subheading.text-muted.contact {
     font-weight: 300;
     text-align: center!important;
     font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.carousel-item {
+  width: auto;
+  height: auto;
 }
