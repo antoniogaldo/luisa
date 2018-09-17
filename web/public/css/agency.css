@@ -7,7 +7,7 @@ p {
 }
 
 a {
-  color: #fed136;
+  color: #000000;
 }
 
 a:hover {
@@ -242,7 +242,7 @@ img::-moz-selection {
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background: rgba(78, 79, 78, 0.7);
+  background: rgba(0, 0, 0, 0.84);
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -320,7 +320,7 @@ img::-moz-selection {
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.84);
 }
 
 #video .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -663,6 +663,11 @@ img::-moz-selection {
 }
 
 @media (min-width: 1200px) {
+  .w-100 {
+    max-height:600px;
+    margin: 0 auto;
+    width: auto !important;
+  }
   .timeline > li {
     min-height: 170px;
   }
@@ -857,7 +862,7 @@ button.btn.btn-default.upload-more1 {
     font-size: 12px;
     letter-spacing: -1px;
     word-spacing: 1px;
-    font-weight: 100;
+    font-weight: 500;
     font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
     margin-top: -12px;
     text-align: center;
@@ -1006,8 +1011,4 @@ h3.section-subheading.text-muted.contact {
     font-weight: 300;
     text-align: center!important;
     font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-.carousel-item {
-  width: auto;
-  height: auto;
 }
